@@ -1,0 +1,5 @@
+.DS_Store
+
+# ignore files in folder foo
+public/*
+node_modules

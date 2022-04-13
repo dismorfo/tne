@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <article class="{{ .Params.type }}">
+    <a id="main-content"></a>
+    <div class="spoke node node-spoke view-mode-full is-available clearfix">
+      {{- partial "spoke.header.html" . -}}
+      {{- partial "spoke.body.html" . -}}
+      {{- partial "spoke.aside.html" . -}}
+    </div>
+  </article>
+{{ end }}

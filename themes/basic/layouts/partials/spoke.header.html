@@ -1,0 +1,21 @@
+<header class="spoke-header">
+  <time class="pubdate">
+    <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="{{ .Date }}">{{ .Params.display_date }}</span>
+  </time>
+  <h1 class="spoke-title">{{ htmlUnescape .Title }}</h1>
+  {{ if .Params.contributors }}
+    {{ $contributorsUrl := printf "%s" .Params.contributors }}
+    {{ $contributors := getJSON $contributorsUrl }}
+    {{ range $contributors.response.docs }}
+      <div class="peoplelist clearfix field field-name-contributors-to-this-{{ .Site.Params.project.code }} field-type-ds field-label-hidden mc-{{ .Site.Params.project.code }}">
+        <div class="label">by</div>
+        <div class="h-card vcard user-profile view-mode-user_byline">
+          <div class="p-name name fn">
+            <a href="{{ .profile_url }}">{{ .name }}</a>
+          </div>
+          <span class="p-org org">{{ .organization.name }}</span>
+        </div>
+      </div>      
+    {{ end }}
+  {{ end }}
+</header>

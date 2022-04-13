@@ -1,0 +1,36 @@
+{
+  "name": "dlts-mediacommons-tne",
+  "version": "1.0.0",
+  "description": "MediaCommons - The New Everyday",
+  "main": "index.js",
+  "scripts": {
+    "serve": "hugo server --panicOnWarning --renderToDisk --verbose --forceSyncStatic --debug --cleanDestinationDir --disableFastRender",
+    "webpack-dev": "webpack --mode=development",
+    "webpack-watch": "webpack --watch --mode=development",
+    "dev": "npm-run-all webpack-dev --parallel webpack-watch hugo-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dismorfo/glowing-octo-broccoli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/dismorfo/glowing-octo-broccoli/issues"
+  },
+  "homepage": "https://github.com/dismorfo/glowing-octo-broccoli#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "lunr": "^2.3.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

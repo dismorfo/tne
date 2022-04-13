@@ -1,0 +1,12 @@
+<nav class="global">
+  <ul aria-label="MediaCommons Global Navigation Menu">
+    <li class="menu__item is-expanded first expanded frontpage sites_nav">
+      <a href="http://mediacommons.org" class="menu__link logolink mc-logo"><span>Front page</span></a>
+      <ul aria-hidden="true">
+        {{ range .Site.Params.menu.network }}
+          <li class="menu__item is-leaf leaf {{ .identifier }}"><a href="{{ .url }}" class="menu__link">{{ .title }}</a></li>
+        {{ end }}
+      </ul>
+    </li>
+  </ul>
+</nav>

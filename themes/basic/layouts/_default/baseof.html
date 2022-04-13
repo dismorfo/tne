@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  {{ $code := printf "%s" .Site.Params.project.code }}
+  {{- partial "head.html" . -}}
+  {{ $front := "not-front" }}
+  {{ if .IsHome }}
+    {{ $front = "front" }}
+  {{ end }}  
+  <body class="html {{ $front }} {{ $code }}">
+    <a id="skip-link" href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    {{- partial "globalnav.html" . -}}
+    {{- partial "header.banner.html" . -}}
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+    </main>
+    {{- partial "footer.html" . -}}
+  </body>
+</html>

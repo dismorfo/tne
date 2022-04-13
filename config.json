@@ -1,0 +1,71 @@
+{
+  "baseURL": "http://localhost:1313/",
+  "languageCode": "en-us",
+  "title": "Site",
+  "theme": "basic",
+  "params": {
+    "author": "Alberto Ortiz Flores",
+    "favicon": "/favicon.ico",
+    "description": "The New Everyday investigates the mundane, the quotidian, the habitual, and the routine, focusing in particular on the roles that media and technology play in their construction.",
+    "project": {
+      "label": "The New Everyday",
+      "code": "tne"
+    },
+    "menu": {
+      "network": [
+        {
+          "id": "fieldguide",
+          "title": "Field Guide",
+          "url": "https://mediacommons.org/fieldguide"
+        },
+        {
+          "id": "altacademy",
+          "title": "#Alt-Academy",
+          "url": "http://mediacommons.org/alt-ac"
+        },
+        {
+          "id": "inmediares",
+          "title": "In Media Res",
+          "url": "http://mediacommons.org/imr"
+        },
+        {
+          "id": "intransition",
+          "title": "[in]Transition",
+          "url": "http://mediacommons.org/intransition"
+        },
+        {
+          "id": "mcpress",
+          "title": "MediaCommons Press",
+          "url": "http://mcpress.media-commons.org"
+        },
+        {
+          "id": "theneweveryday",
+          "title": "The New Everyday",
+          "url": "http://mediacommons.org/tne"
+        }
+      ],      
+      "main": [
+        {
+          "id": "home",
+          "url": "/",
+          "title": "Home"
+        },
+        {
+          "id": "tne-about",
+          "url": "/about",
+          "title": "About"
+        },
+        {
+          "id": "tne-how-it-works",
+          "url": "/how-it-works-new",
+          "title": "How It Works"
+        },
+        {
+          "id": "tne-archives",
+          "url": "/cluster",
+          "title": "Archives"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {{- if .Page.IsHome -}}
+      {{ .Site.Title }}
+    {{- else -}}
+      {{ .Title }} - {{ .Site.Title }}
+    {{- end -}}
+  </title>
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ with .Site.Params.favicon }}
+    <link rel="shortcut icon" href="{{ . }}" type="image/x-icon" />
+  {{ end }}  
+  <meta http-equiv="cleartype" content="on">  
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="description" content="
+    {{- with .Page.Description -}}
+      {{ . }}
+    {{- else -}}
+      {{ .Site.Params.descraiption }}
+    {{- end -}}">
+  
+  {{ $options := (dict "transpiler" "dartsass" "outputStyle" "compressed" "enableSourceMap" true) }}
+  {{ $style := resources.Get "css/mediacommons_base.scss" | resources.ToCSS $options | minify | fingerprint }}
+
+  <link rel="stylesheet" href="{{ $style.RelPermalink | relURL }}">
+  
+  {{ range .AlternativeOutputFormats -}}
+    {{- $link := `<link rel="%s" type="%s" href="%s" title="%s">` -}}
+    {{- $title := printf "%s - %s" $.Page.Title $.Site.Title -}}
+    {{- if $.Page.IsHome -}}
+      {{ $title = $.Site.Title }}
+    {{- end -}}
+    {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
+  {{- end }}
+
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: {
+        families: ['Open+Sans:300,400,700:latin',
+          'Droid+Sans:400,700:latin'
+        ]
+      }
+    };
+    (function () {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30270469-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-30270469-5', {
+      'anonymize_ip': true
+    });
+  </script> -->
+</head>

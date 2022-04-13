@@ -1,0 +1,40 @@
+{{ if .Params.part_of }}
+  {{ $nid := int .Params.nid }}
+  {{ $url := printf "%s" .Params.comments }}
+  {{ $data := getJSON $url }}
+  <section id="comments" class="comments comment-wrapper">
+    <div class="comments-all">
+      {{ if $data.comments }}
+        <header>
+          <h1 class="comments__title title">Comments</h1>
+        </header>
+        {{ range $data.comments }}  
+          <a id="comment-{{ .cid }}"></a>        
+          <article class="comment first odd clearfix top-level">
+            <header>
+              <h3 class="comment__title comment-title">{{ .subject }}</h3>
+              <div class="h-card vcard clearfix">
+                <div class="field-user-avatar photo u-photo-small">
+                  <span class="user-picture">
+                    <img src="{{ .user.picture }}" alt="{{ .user.name }}&#039;s picture" title="{{ .user.name }}&#039;s picture" />
+                  </span>
+                </div>
+                <div class="nameHolder">By <span class="p-name"><span><a href="{{ .user.profile_url }}" title="User profile: {{ .user.name }}" class="username">{{ .user.name }}</a></span></span></div>
+                {{ if .user.organization.name }}
+                  <span class="p-org org">{{ .user.organization.name }}</span>
+                {{ end }}
+              </div>
+              <time>
+                <span>{{ .display_date }}</span>
+              </time>
+            </header>
+            <span class="rdf-meta element-hidden"></span>
+            <div class="field field-name-comment-body field-type-text-long field-label-hidden mc-tne">
+              <div class="field-items">{{ safeHTML .body }}</div>
+            </div>
+          </article>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

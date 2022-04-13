@@ -1,0 +1,11 @@
+<div class="spoke-body">
+  <div class="field field-name-field-embed field-type-text-long field-label-hidden mc-{{ .Site.Params.project.code }}">
+    <div class="field-items">
+      <div class="field-item even"></div>
+    </div>
+  </div>
+  <section class="body-text">
+    {{ .Content }}
+  </section>
+  {{- partial "comments.html" . -}}
+</div>

@@ -1,0 +1,76 @@
+{{ define "main" }}
+  <div id="content">
+    <article class="toc">
+      <a id="main-content"></a>
+      <div class="ds-1col node node-hub view-mode-full clearfix">
+        <header class="hubhead group-flex1">
+          {{ if .Params.image }}
+          <div class="field field-name-field-representative-image field-type-image field-label-hidden mc-tne">
+            <div class="field-items">
+              <div class="field-item even">
+                <img src="{{ .Params.image }}" alt=""></div>
+            </div>
+          </div>
+          {{ end }}
+          <h1 class="hub-title">{{- .Title | safeHTML -}}</h1>
+          <time class="timerangeheader">
+            <span class="date-display-range">
+              <span class="date-display-start">{{ .Params.period.start }}</span> to <span class="date-display-end">{{ .Params.period.end }}</span>
+            </span>
+          </time>
+          <div class="field field-name-field-body">
+            {{ .Content | safeHTML }}
+          </div>          
+          {{ if .Params.taxonomy }}
+            {{ $url := printf "%s" .Params.taxonomy }}
+            {{ $taxonomy := getJSON $url }}
+            {{ if $taxonomy.response.docs }}
+              <div class="tags">
+                <ul class="tags">
+                  {{ range $taxonomy.response.docs }}
+                    <li><a href="{{ .url }}">{{ .name }}</a></li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}            
+          {{ end }}
+        </header>
+        <div class="group-flex2">
+          <div class="field field-name-field-spokes">
+            {{ if .Params.spokes }}
+              {{ $url := printf "%s" .Params.spokes }}
+              {{ $spokes := getJSON $url }}
+              {{ if $spokes.response.docs }}
+                {{ range $spokes.response.docs }}
+                  <div class="ds-1col node node-spoke node-teaser view-mode-teaser is-available clearfix">
+                    <div role="presentation" class="thumb">
+                      <a tabindex="-1" aria-hidden="true" href="/{{ .path }}">
+                        <img style="width: 120px; height: 80px;" src="{{ .thumbnail }}" alt="">
+                      </a>
+                    </div>
+                    <div class="spoke-teaser-meta">
+                      <h2 class="spoke-title">
+                        <a href="/{{ .path }}">{{ .title }}</a>
+                      </h2>
+                      <div class="peoplelist contributors">By 
+                        {{ range .contributors }}
+                          <span class="h-card"><a href="{{ .profile_url }}">{{ .name }}</a></span>
+                        {{ end }}
+                      </div>
+                      <time>
+                        <span class="date-display-single">{{ .displayDate }}</span>
+                      </time>
+                      {{ if .Params.spokes }}
+                        <div class="comment-count">{{ .comment }} {{ "comment" | pluralize }} </div>
+                      {{ end }}
+                    </div>
+                  </div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+{{ end }}

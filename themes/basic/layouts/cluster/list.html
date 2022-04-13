@@ -1,0 +1,54 @@
+{{ define "main" }}
+  <article id="contentwide">
+    <h1 class="page-title">Archives</h1>
+    <div class="view-content">
+      {{ range where site.RegularPages "Type" "cluster" }}
+        <div class="ds-1col node node-hub node-promoted node-teaser view-mode-teaser clearfix">
+          <div class="group-flex1">
+            <div class="field field-name-field-representative-image">
+              <a href="{{ .Params.path }}">
+                <img src="{{ .Params.image }}">
+              </a>
+            </div>
+          </div>
+          <div class="group-flex2">
+            <h3 class="hub-title"><a href="#">{{ .Title }}</a></h3>
+            <time>
+              <span class="date-display-range">
+                <span class="date-display-start">{{ .Params.period.start }}</span> to <span class="date-display-end">{{ .Params.period.end }}</span>
+              </span>
+            </time>
+            <div class="spokes">
+              {{ if .Params.spokes }}
+                {{ $url := printf "%s" .Params.spokes }}
+                {{ $spokes := getJSON $url }}
+                {{ if $spokes.response.docs }}
+                  {{ range $spokes.response.docs }}
+                    <div class="ds-1col node node-spoke node-teaser view-mode-teaser is-available clearfix">
+                      <div role="presentation" class="thumb">
+                        <a tabindex="-1" aria-hidden="true" href="/{{ .path }}">
+                          <img style="width: 120px; height: 80px;" src="{{ .thumbnail }}" alt="">
+                        </a>
+                      </div>
+                      <div class="spoke-teaser-meta">
+                        <h2 class="spoke-title"><a href="/{{ .path }}">{{ .title }}</a></h2>
+                        <div class="peoplelist contributors">By 
+                          {{ range .contributors }}
+                            <span class="h-card"><a href="{{ .profile_url }}">{{ .name }}</a></span>
+                          {{ end }}
+                        </div>
+                        <time>
+                          <span class="date-display-single">{{ .displayDate }}</span>
+                        </time>
+                      </div>
+                    </div>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </article>
+{{ end }}

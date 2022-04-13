@@ -1,0 +1,46 @@
+<aside>
+  <div class="block">
+    {{ if .Params.part_of }}
+      {{ $nid := int .Params.nid }}
+      {{ $url := printf "%s" .Params.part_of }}
+      {{ $hubs := getJSON $url }}
+      {{ if $hubs.response.docs }}
+        {{ range $hubs.response.docs }}
+          <div class="view-all-spokes-in-this-spokes-hub">
+            <header class="view-header">
+              <h1 class="hub-title"><span>From:</span> <a href="{{ .path }}">{{ htmlUnescape .title }}</a></h1>
+            </header>        
+            <div class="view-content">
+              <div class="item-list">      
+                <ul>
+                  {{ range .spokes }}
+                    {{ $spokenid := int .nid }}
+                    <li class="leaf{{ if eq $nid $spokenid }} active{{ end }}">
+                      <div class="ds-1col node node-spoke node-teaser view-mode-teaser is-available clearfix">
+                        <div role="presentation" class="thumb">
+                          <a tabindex="-1" aria-hidden="true" href="/{{ .path }}">
+                            <img src="/images/transparent.png" alt="" />
+                          </a>
+                        </div>
+                        <div class="spoke-teaser-meta">
+                          <h2 class="spoke-title">
+                            <a href="/{{ .path }}">{{ htmlUnescape .title }}</a>
+                          </h2>
+                          <div class="peoplelist contributors">By 
+                            {{ range .contributors }}
+                              <span class="h-card"><a href="{{ .profile_url }}">{{ .name }}</a></span>
+                            {{ end }}
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+</aside>

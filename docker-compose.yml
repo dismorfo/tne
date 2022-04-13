@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  hugo:
+    image: klakegg/hugo:0.93.2-ext-ubuntu
+    command: server --renderToDisk --verbose --forceSyncStatic --debug --cleanDestinationDir --disableFastRender
+    volumes:
+      - ".:/src"
+    ports:
+      - 1313:1313
+  # solr:
+  #   image: solr:latest
+  #   command: solr-create -c gettingstarted
+  #   ports:
+  #     - 8001:8983
+  #   volumes:
+  #     - data:/var/solr      
+# volumes:
+#   data:

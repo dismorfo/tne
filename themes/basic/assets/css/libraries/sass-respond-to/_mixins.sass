@@ -1,0 +1,72 @@
+@import "vars";
+
+@mixin respond-to($media) {
+  @if $media == xs or $media == xs-only {
+    @media #{$screen} and (max-width: $xs-top) {
+      @content;
+    }
+  }@else if $media == sm or $media == sm-only {
+    @media #{$screen} and (min-width: $sm-bottom) and (max-width: $sm-top) {
+      @content;
+    }
+  }@else if $media == md or $media == md-only {
+    @media #{$screen} and (min-width: $md-bottom) and (max-width: $md-top) {
+      @content;
+    }
+  }@else if $media == lg or $media == lg-only {
+    @media #{$screen} and (min-width: $lg-bottom) and (max-width: $lg-top) {
+      @content;
+    }
+  }@else if $media == xl or $media == xl-only {
+    @media #{$screen} and (min-width: $xl-bottom) {
+      @content;
+    }
+  }@else if $media == sm-down {
+    @media #{$screen} and (max-width: $sm-top) {
+      @content;
+    }
+  }@else if $media == sm-up {
+    @media #{$screen} and (min-width: $sm-bottom) {
+      @content;
+    }
+  }@else if $media == md-down {
+    @media #{$screen} and (max-width: $md-top) {
+      @content;
+    }
+  }@else if $media == md-up {
+    @media #{$screen} and (min-width: $md-bottom) {
+      @content;
+    }
+  }@else if $media == lg-down {
+    @media #{$screen} and (max-width: $lg-top) {
+      @content;
+    }
+  }@else if $media == lg-up {
+    @media #{$screen} and (min-width: $lg-bottom) {
+      @content;
+    }
+  }@else if $media == xl-up {
+    @media #{$screen} and (min-width: $xl-bottom) {
+      @content;
+    }
+  }@else if $media == sm-md {
+    @media #{$screen} and (min-width: $sm-bottom) and (max-width: $md-top) {
+      @content;
+    }
+  }@else if $media == sm-lg {
+    @media #{$screen} and (min-width: $sm-bottom) and (max-width: $lg-top) {
+      @content;
+    }
+  }@else if $media == md-lg {
+    @media #{$screen} and (min-width: $md-bottom) and (max-width: $lg-top) {
+      @content;
+    }
+  }@else {
+    @error "Error: sass mixin respond-to wrong argument: #{$media}";
+  }
+}
+@mixin supports-grid {
+  @supports (grid-area: auto) {
+    @content;
+  }
+}

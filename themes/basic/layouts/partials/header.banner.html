@@ -1,0 +1,29 @@
+<header class="banner">
+  <button type="button" class="skip-arrow" aria-label="menu"></button>
+  <div class="top-hold">
+    <h1><a href="/" rel="home" class="logo"><span>{{ .Site.Params.project.label }}</span></a></h1>
+    <div id="block-search-form" class="block block-search first last odd mc-{{ .Site.Params.project.code }}" role="search">      
+      <form action="http://mediacommons.org/search/site" id="search-block-form" accept-charset="UTF-8">
+        <label><span>Search this site:</span></label>
+        <fieldset>
+          <div class="search-contain">
+            <input title="Enter the terms you wish to search for." placeholder="Search..." aria-label="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+            <input type="submit" name="op" value="" class="form-submit search" />
+          </div>
+        </fieldset>
+      </form>
+      <!--
+        <iframe style="border: none;" src="http://mediacommons.org/api/v1/search_form" title="Search MediaCommons network"></iframe>
+      -->
+    </div>
+  </div>
+  <nav id="main-nav" class="nav main">
+    {{- if .Site.Params.menu.main -}}
+      <ul class="main">
+      {{ range .Site.Params.menu.main }}
+        <li class="menu-{{ .identifier }}"><a href="{{ .url }}">{{ .title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}    
+  </nav>
+</header>

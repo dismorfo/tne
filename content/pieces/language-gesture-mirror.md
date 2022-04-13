@@ -1,0 +1,53 @@
+---
+title: "Gesture / Language / Mirror"
+nid: 295
+type: pieces
+date: 2014-02-11T00:27:17+00:00
+display_date: Tuesday, February 11, 2014
+part_of: http://192.168.0.5:8080/tne/api/v1/spoke/295/partof
+comments: http://192.168.0.5:8080/tne/api/v1/spoke/295/comments
+contributors: http://192.168.0.5:8080/tne/api/v1/spoke/295/contributors
+draft: false
+---
+
+*Gesture / Language / Mirror* is a multimedia research project and series of installations that explores neuroscience’s concept of the mirror neuron and its applications to psychotherapy. The project centers on the development of a set of “mirroring” algorithms that leverage computer vision techniques to dynamically recombine video of therapists and patients as they interact in group “mirror therapy” sessions.
+
+In the early 1990s, the theory of mirror neurons was proposed to explain the observation that the same neurons which fire when a monkey performs an action also fire when the monkey watches a researcher performing that action (Di Pelligrino et al., 1992). Consequently, the mirror neuron was hypothesized as the neurobiological mechanism that internally “simulated” observed actions, helping the monkey (and the human) to understand what action was being performed and why. Although subsequent studies demonstrated limitations of the theory, recent cognitive neuroscience research continues to support the idea that mirror neurons do react to specific kinds of gestures and are likely tied to the complex emotional systems that participate in our understanding of facial expressions and actions (Gallese, 2003; Iacoboni et al, 2005; Mukamel et al., 2010; Rizzolatti and Craighero, 2004).
+
+*Gesture / Language / Mirror(G/L/M)* explores the mirror neuron both as a rich metaphor for embodied interaction and as a research agenda responsible for new models of patient-therapist interaction in group psychotherapy. The real-time ‘mirroring’ algorithms used in the project are designed to function analogously to mirror neurons as described in the research, detecting changes in the body position, gestures, and expressions of an actor. In the first installation of *G/L/M*, a therapist, whose dialogue has been prerecorded, is presented on a large vertically-oriented video monitor set in a typical therapy space, complete with a sofa, coffee-table, and armchairs. As the therapist addresses the assembled patients (also represented by actors on video screens), the system analyzes the therapist’s data-stream for gestural data, which is then mapped against gestures in the patient database. When matches above a tunable threshold are identified, the video 'jumps' ahead to the corresponding moment in the dialogue, creating a fragmented narrative stream driven by gesture and posture, rather than narrative or chronology. The repetition of body language across therapy sessions exposes when and how participants use bodily performance to enact verbal utterances. In subsequent interactive versions of the installation, audience members may participate in the therapy session by sitting in an unoccupied chair in the installation space, at which point the video streams from the therapist and patients begin reacting to the gestures and expressions of the viewer, tracked live via video camera, according to the process described above.
+
+![](http://mediacommons.futureofthebook.org/tne/sites/mediacommons.futureofthebook.org.tne/files/images/gesturemnimstallation2014.jpg)
+
+**Theory**
+
+The project embodies Harun Farocki’s (2004) notion that images “do not represent an object, but rather are part of an operation” (2004: 17). Indeed, the mirror neuron, conceptualized as an automatic, unconscious flickering of the brain that cannot exist or act except via light, motion and air, rejects the long regime of Western representationalism in favor of the bursting of simultaneous activity – the collective movement of electricity, glia, light, and fatty surfaces, in a repositioning of “the image” as a collective event. Saying that a mirror neuron “simulates” visual stimuli, as neuroscientists tend to do, reveals how rooted the Western intellect is in the antiquated language of the real and the representation. The language of the mirror belies the complex, chaotic milieu of material forces at play in its moment of appearance. Seeing the mirror neuron in this sudden, messy way frustrates traditional theorizations of media-as-object and viewer-as-subject. The image proper, in other words, disintegrates in a swirl of varied and various bodies, “touching” one another and transforming material relations into a sudden awareness—a collective event.
+
+“Gesture / Language / Mirror” builds on the intellectual trajectory described in Daniel Howe and John Cayley’s (2009) “The Readers Project.” In this work, Howe and Cayley make the visualization of text a particularized function of computational interaction, releasing a set of algorithmic “readers” onto various texts. Each so-called ‘reader’ navigates the text according to a specific strategy, composed from the operations in which it is interested (e.g., probability models, part-of-speech tagging, or metric analysis). In recent installations of the project, visitors have been able to subscribe (via mobile devices) to the output of individual readers as they produce new and unexpected subtexts determined by their navigational choices. As a result, the project not only composes newly charged versions of a text, but offers itself as an investigation of reading that is both a geography of text-ures, and an engagement with the imagination that cuts across mental processes, linguistic aesthetics, and computational operations. In so doing, ‘The Readers Project’ contemplates the incorporation of algorithmic crawlers and trackers—the operational machinations of hackers and corporate entities alike—as “readers”, participating in the formation of specific linguistic aesthetics. Put simply, the project situates institutional, affective, algorithmic, interpretive, and aesthetic interactions as a meaningful collective, one that remains ever open to unpredictable generations and permutations.
+
+![](http://mediacommons.futureofthebook.org/tne/sites/mediacommons.futureofthebook.org.tne/files/images/readersproject2012.jpg)
+
+The philosophical ancestry of thinking outside objects—preceding Faroki’s (2004) proposal of the operative image—also crucially informs the project, taking direction from Deleuze’s (1988/1993) notion of the dispersal of objects and his rejection of “things” as self-contained and stable. Deleuze instead adopts the abstract thinking of “folds,” drawing inspiration from the Baroque style of “low and curved stairs… spongy, cavernous shapes” (4). Deleuze presents all things as an infinite folding and unfolding, favoring fluctuation and divergence — “a continuous variation of matter” (19). In so doing, he pushes the Western history of philosophy to fully embrace an emergent, often disconnected, order, wherein a transformation, word, or machine is not “prefigured by those units in the course of logical development” (xiv). Ultimately, this stance compels Deleuze to comment on new possibilities for ecological art—as something that might exist, as he says, “in extension” (123). He imagines a sculpture extending into its surrounding architecture, into the landscape, into the city, with “each art tending to be prolonged and even to be prolonged into the next art,” a “wrapping and unwrapping,” a performance of folds (123-124). By imagining such an art, he condenses—or folds over—inside and outside.
+
+*G/L/M* similarly functions across a series of insides and outsides: the affective insides of bodies expressed outwardly in gesture, the disciplinary insides of neuroscience expressed outwardly in the mirror neuron interpretation, the insides of psychotherapy settings expressed outwardly in the results of mirroring therapy, the algorithmic insides of the computer expressed outwardly on screens. As a result, the artwork traces a Deleuzian extension from the brain to neuroscience to group psychotherapy to the art installation, just as it aims to affectively extend into the installation audience. Put another way, just as mirror neurons have been folded into mirror therapy, the artwork folds mirroring into algorithmic processes that are then folded into the video of therapist-patient interactions. Finally these interactions are folded into participant’s own mirrored gestures and expressions.
+
+On one level, the project aims to be reflective and evaluative. Using neuroscientific descriptions of mirror neurons to develop an algorithm leverages the creative context to explore mirror therapy. By entering into the mirroring process and affecting the content and chronology of patient utterances, participants are able to compose a first-hand evaluation of this novel therapeutic practice. On another level, however, the project is political. It urges a critical interrogation of neuroscience, questioning the basis of claims for the legitimized object of the brain, the neuron, the FMRI machine, even the neuroscientist herself. Each is folded mercilessly into the others such that the neuron, the mirror, the gesture, the language, are all rendered indistinct.
+
+**References**
+
+Clark, Andy. (2003). *Natural-born Cyborgs: Minds, Technologies, and the Future of Human Intelligence*. Oxford: Oxford University Press.
+
+Deleuze, G. (1988/1993). The fold: Leibniz and the Baroque. Trans. Tom Conley. Minneapolis: University of Minnesota Press.
+
+Di Pellegrino, G., Fadiga, L., Fogassi, L., Gallese, V., &amp; Rizzolatti, G. (1992). Understanding motor events: A neurophysiological study. *Experimental Brain Research*, *91*(1), p. 176–180.
+
+Farocki, H. (2004). “Counter Music.” Thermal camera footage, 23:00. Available: <http://www.vdb.org/titles/counter-music>.
+
+Gallese, V. (2003). The Roots of Empathy: The Shared Manifold Hypothesis and the Neural Basis of Intersubjectivity. *Psychopathology*, *36*(4), 171-180.
+
+Howe, Daniel C., and Cayley, John. (2011) *The Readers Project: Procedural Agents and Literary Vectors*. Leonardo, August 2011, Vol. 44, No. 4: 317-324, MIT Press.
+
+Iacoboni, M., Molnar-Szakacs, I., Gallese, V., Buccino, G., Mazziotta, J.C., Rizzolatti, G. (2005). *Grasping the intentions of others with one’s own mirror neuron system, PLoS Biology* 3.3, p. e79.
+
+MukamelR., Ekstrom A.D., Kaplan J., Iacoboni M., Fried I. (2010). Single-neuron responses in humans during execution and observation of actions. Current Biology. 20(8), p. 750-6.
+
+Rizzolatti G, Craighero L. (2004). The mirror-neuron system. *Annu Rev Neurosci*. 27, p. 169–192.
